@@ -1,6 +1,6 @@
 """
 This program will prompt the user to enter a number
-Then based on the user input will print some rectangular
+Then based on the user input will print some rectangle 
 for example:
 	n = 1
 	*
