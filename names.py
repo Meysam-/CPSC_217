@@ -10,17 +10,26 @@ import sys
 print(sys.argv)
 
 # faking the command line arguments
-sys.argv = ['names.py', 'GirlsNames.txt']
+sys.argv = ['names.py', 'GirlsNames1.txt']
 
 file_name = sys.argv[1]
 
-file_handle = open(file_name, 'r')
-print(file_handle)
+try:
+    file_handle = open(file_name, 'r')
+    print(file_handle)
 
-# this line will read the whole file and return it as a string 
-file_contents = file_handle.read()
-# print(file_contents)
+    # this line will read the whole file and return it as a string
+    file_contents = file_handle.read()
+    # print(file_contents)
 
+    # we always need to close the files when we are done whit it
+    file_handle.close()
+
+except FileNotFoundError:
+    print("file not exist!!")
+    exit()
+
+# Processing the contents of the file:
 # this line will split the lines of the text and return a List of strings
 names = file_contents.split("\n")
 
